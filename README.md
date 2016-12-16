@@ -15,7 +15,7 @@ runnables.co.th
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
 
 ## หัวข้อ
-- หน้าปก
+- [หน้าปก](./cover.md)
 - กิตติกรรมประกาศ
 - บทคัดย่อ
 - คำนำ
