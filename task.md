@@ -123,13 +123,16 @@
 สำหรับโปรเจกต์นี้ Backend แบ่งเป็นหลายๆ MicroServices
 ซึ่งต้องเรียกใช้แต่ละ Service ผ่าน API Gateway นอกจากนี้ยังมีการเขียน Datastore Deep Populate ขึ้นมา ใช้งานได้ดีบน Network ของ Google ในการดึง Data Nested Model มาจาก Google Datastore ซึ่งคล้ายๆกับ [mongoose-deep-populate](https://github.com/buunguyen/mongoose-deep-populate) สำหรับ MongoDB ใช้งานได้ดีกับ Google App Engine และ Google Compute Engine เนื่องจาก Network ภายใน Google จะให้ผลดีในการเข้าถึงข้อมูลใน Google Datastore
 
+<p align="center">
+  <img src="./assets/task/2-11.png">
+  <small>รูปที่ 2-11 กราฟการใช้งานของ VM Instance</small>
+</p>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 นอกจากนี้ยังมีการ Setup CircleCI ให้รัน Automated Test ของ Code ที่ push ขึ้น github ถ้าหากผ่านทุก Test Case จะทำการ ตามที่ได้ Set ไว้ แต่หาก เกิด Error ขึ้น เนื่องจาก Run Test Case ไม่ผ่าน หรือ ไม่สามารถ Deploy ได้ ก็จะแจ้งมายัง Slack ที่ใช้สื่อสารกันในบริษัท โดยมีการใช้งานร่วมกับ emoticon (:ambulance: :zap:) ใน commit message ในการกำหนดสถานะการ Deploy ให้แตกต่างกัน
 
-> *TODO: Capture รูปกราฟตอนมันใช้งานเยอะๆถ้ามี ถ้าไม่มีช่างมัน (2-11)*
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-ขั้นตอนดำเนินการคือ การให้องค์กรที่ต้องการใช้งานมาลงทะเบียนสร้างองค์กรของตนในระบบไว้ แล้วจากนั้นจึงสร้างโปรเจ็กต์ขึ้นมา โดยระบุข้อมูลว่าต้องการข้อความแบบไหนบ้าง แล้วตัว Crawler ก็จะทำการส่งข้อความที่ตรงเงื่อนไขเข้าสู่โปรเจ็กต์โดยมีจะมี Analyst คอยวิเคราะห์ข้อความดังกล่าว และใส่ข้อมูลระบุคุณสมบัติของข้อความนั้นๆ ว่าพูดถึงองค์กรในแง่บวกหรือลบ และพูดถึงในหัวข้อไหน ซึ่งทางองค์กรเองก็สามารถสร้าง Dashboard เพื่อดูการ Visualization สรุปข้อมูลได้ โดยใช้บริการจาก Third-party (เช่น Tableau)
+โดยขั้นตอนดำเนินการของบริการนี้คือ การให้องค์กรที่ต้องการใช้งานมาลงทะเบียนสร้างองค์กรของตนในระบบไว้ แล้วจากนั้นจึงสร้างโปรเจ็กต์ขึ้นมา โดยระบุข้อมูลว่าต้องการข้อความแบบไหนบ้าง แล้วตัว Crawler ก็จะทำการส่งข้อความที่ตรงเงื่อนไขเข้าสู่โปรเจ็กต์โดยมีจะมี Analyst คอยวิเคราะห์ข้อความดังกล่าว และใส่ข้อมูลระบุคุณสมบัติของข้อความนั้นๆ ว่าพูดถึงองค์กรในแง่บวกหรือลบ และพูดถึงในหัวข้อไหน ซึ่งทางองค์กรเองก็สามารถสร้าง Dashboard เพื่อดูการ Visualization สรุปข้อมูลได้ โดยใช้บริการจาก Third-party (เช่น Tableau)
 
 <p align="center">
   <img src="./assets/task/2-12.png">
@@ -154,7 +157,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ซึ่งหนึ่งในสิ่งที่ท้าทายของงานชิ้นนี้ก็คือการออกแบบการจัดการ Permission ต่างๆ เพราะมีผู้ใช้งานที่มีสิทธิ์ต่างกันหลายแบบมาก เช่น Super Admin ที่จัดการได้ทุกอย่างบนเว็บไซต์, Admin ขององค์กร ที่สามารถจัดการบุคคลในองค์กร หรือสร้างโปรเจ็กต์ใหม่ๆได้, Admin/Project Owner ที่มีสิทธิ์จัดการข้อมูลโปรเจ็กต์ต่างๆ, Analyst ที่มีสิทธิ์แค่การดูข้อความในโปรเจ็กต์ และใส่ข้อมูลให้กับข้อความต่างๆเท่านั้น ไม่มีสิทธิ์ในการลบโปรเจ็กต์ หรือจัดการเปลี่ยนการตั้งค่าของโปรเจ็กต์ และประเภทอื่นๆอีกมากมาย ทำให้ได้เรียนรู้วิธีการออกแบบการเก็บข้อมูล และวิธีการตรวจสอบสิทธิ์ที่มีประสิทธิภาพ รวมถึง Frontend ก็ต้องกำหนดการเข้าถึงหน้าต่างๆของผู้ใช้แต่ละคนให้เข้าถึงได้เฉพาะหน้าที่ควรเข้าถึงได้ และแสดง Function ต่างๆเท่าที่ผู้ใช้คนนั้นมีสิทธิ์
 
-> *TODO: Capture รูปพวกหน้า BigQuery, DataStore, AppEngine, ComputeEngine แล้ว Censor พวก Sensitive Information (ใส่ Filter > Pixelate > Mosaic 20px ใน Photoshop ถ้าขี้เกียจทำแคปส่งมาก็ได้) (2-16) (2-17)*
+<p align="center">
+  <img src="./assets/task/2-16.png">
+  <small>รูปที่ 2-16 Screenshot หน้า Instances ต่างๆ ของ Google Compute Engine</small>
+</p>
+
+<p align="center">
+  <img src="./assets/task/2-17.png">
+  <small>รูปที่ 2-17 Screenshot หน้า Google BigQuery</small>
+</p>
 
 ### 2.5 พัฒนาเว็บแอพพลิเคชันแหล่งรวมบริการรับสอนพิเศษ ด้วย ReactJS, Redux, Node.js, MongoDB, Google Firebase
 
