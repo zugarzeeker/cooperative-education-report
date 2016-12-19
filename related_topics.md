@@ -133,9 +133,16 @@ _base.React.createElement(
 โดยธรรมชาติของการพัฒนาแอพพลิเคชั่นนั้น การเปลี่ยน Module ภายนอกที่ใช้ไม่ได้เกิดขึ้นบ่อยนัก ดังนั้นการ Optimize แบบนี้จึงส่งผลมาก และช่วยให้การพัฒนาแอพพลิเคชั่นเป็นไปได้อย่างราบรื่นมากขึ้น
 
 ## Continuous Integration (CI)
-- Gitlab CI
-- Circle CI
-> *TODO: เขียนและใส่รูป*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+เพื่อให้การทำงานเป็นไปอย่างราบรื่น Build -> Test -> Deploy
+การทำงานคือหาก push โค้ดขึ้นไปบน github หรือ gitlab ผ่าน จะมีการ Setup CI ให้รัน Test Case หากรันผ่านก็จะรัน Script สำหรับ Deploy เองอัตโนมัติไปยัง Development Server แต่ถ้าไม่ผ่านจะแจ้งมายัง Slack ที่ใช้สื่อสารกันในบริษัท
+
+โดยใน github สามารถใช้งานร่วมกับ `CircleCI` แต่ gitlab จะมี CI ติดมาด้วยกันอยู่แล้ว
+นอกจาก `CircleCI` ยังมี `TravisCI`, `AppVeyor` และอื่นๆอีกมากมาย
+
+https://github.com/integrations/feature/continuous-integration
+
+> *TODO: ใส่รูป CircleCI*
 
 ## Google Cloud Platform
 - https://cloud.google.com/products
