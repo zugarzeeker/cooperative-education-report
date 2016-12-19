@@ -212,13 +212,34 @@ gcloud -q app deploy filename.yaml --promote --version=1
 
 > *TODO: ใส่รูป BigQuery*
 <!--  -->
-> Config params function ?
-
 > Nested Object ?
 
 > Update Schema ?
 
-> Creating View ?
+หากต้องการ Copy Table ที่มีขนาดใหญ่ ต้องใส่ `allowLargeResults` ด้วยจึงจะใช้งานได้ (มิฉะนั้นจะขึ้น Error)
+> *TODO: References Link*
+
+```js
+const queryConfig = {
+  destination: destinationTable,
+  query: queryCommands,
+  allowLargeResults: true
+};
+
+bigquery.startQuery(queryConfig, callback);
+```
+
+การสร้าง View เพื่อใช้งานร่วมกับ Tableau
+> *TODO: References Link*
+
+```js
+const options = {
+  view: {
+    query: queryCommands
+  }
+};
+table.create(options, callback);
+```
 
 ### Google Datastore
 > *TODO: ใส่รูป Datastore*
