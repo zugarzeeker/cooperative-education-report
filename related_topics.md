@@ -208,16 +208,22 @@ gcloud -q app deploy filename.yaml --promote --version=1
 
 ### Google BigQuery
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-ใช้งานคล้ายๆ SQL แต่มีหลายคำสั่งแตกต่างกัน สามารถ Query ข้อมูลปริมาณมาก และ คำสั่งซับซ้อนได้ในเวลาไม่กี่วินาที มีการคิดราคาตามที่ใช้งาน โดยคิดจาก ปริมาณข้อมูลที่ต้องค้นหา และ ปริมาณข้อมูลที่นำออกมา นอกจากนี้ยังสามารถใช้งานได้กับ Node.js
+ใช้งานคล้ายๆ SQL แต่มีหลายคำสั่งและการลักษณะเก็บข้อมูลแตกต่างกัน สามารถ Query ข้อมูลปริมาณมาก และ คำสั่งซับซ้อนได้ในเวลาไม่กี่วินาที มีการคิดราคาตามที่ใช้งาน โดยคิดจาก ปริมาณข้อมูลที่ต้องค้นหา และ ปริมาณข้อมูลที่นำออกมา นอกจากนี้ยังสามารถใช้งานได้กับ Node.js
+(https://googlecloudplatform.github.io/google-cloud-node/#/docs/bigquery/0.6.0/bigquery)
 
 > *TODO: ใส่รูป BigQuery*
-<!--  -->
-> Nested Object ?
 
-> Update Schema ?
+ข้อจำกัดของ BigQuery คือไม่สามารถเปลี่ยนแปลงข้อมูลที่เก็บลงไปแล้วได้ นิยมใช้งานในรูปแบบการเก็บ Log มาวิเคราะห์ แต่หากว่า Log มากเกินไป ก็จะแบ่งตารางตามช่วงเวลาที่เรียกว่า `time-partitioned` เพื่อให้ลดค่าใช้จ่าย และ ปริมาณข้อมูลลงในการ Query (ที่มา: https://cloud.google.com/bigquery/docs/partitioned-tables)
 
-หากต้องการ Copy Table ที่มีขนาดใหญ่ ต้องใส่ `allowLargeResults` ด้วยจึงจะใช้งานได้ (มิฉะนั้นจะขึ้น Error)
-> *TODO: References Link*
+สำหรับ BigQuery จะมี Type Record เก็บได้หลาย Field ซึ่งทำให้มีการใช้งานในรูปแบบของ Nested Data
+สามารถเก็บแบบ หลาย Record ใน 1 Column ได้้ (ที่มา: https://cloud.google.com/bigquery/data-types)
+
+วิธีการจัดการกับ Nested และ Repeated Fields
+ใช้ Flatten กับ Field ที่เป็น Record ผลลัพธ์ที่ได้จะเหมือนผลคูณคาร์ทีเชียน สำหรับ Repeated Fields
+(ที่มา: https://cloud.google.com/bigquery/docs/data)
+
+หากต้องการ Copy Table ที่มีขนาดใหญ่ ต้องใส่ `allowLargeResults` ด้วยจึงจะใช้งานได้โดยไม่มี Error เกิดขึ้น
+(https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs#configuration.query.allowLargeResults)
 
 ```js
 const queryConfig = {
@@ -230,7 +236,7 @@ bigquery.startQuery(queryConfig, callback);
 ```
 
 การสร้าง View เพื่อใช้งานร่วมกับ Tableau
-> *TODO: References Link*
+(https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource)
 
 ```js
 const options = {
@@ -243,6 +249,10 @@ table.create(options, callback);
 
 ### Google Datastore
 > *TODO: ใส่รูป Datastore*
+
+> *TODO: Write about Composite Index*
+
+> *TODO: Write about gstore-node*
 
 ### ข้อดี
 Google App Engine และ Google Compute Engine
