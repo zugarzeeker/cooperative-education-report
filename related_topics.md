@@ -32,6 +32,7 @@ const f = (res) => {
 1. ใช้ Happypack
 2. การเปลี่ยนประเภทของ Source map
 3. การ Build ตัว modules ข้างนอกต่างๆก่อน
+4. ใช้ HardSourceWebpackPlugin
 
 ### การทำงานของ Happypack
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -102,6 +103,10 @@ _base.React.createElement(
 ### การ Build ตัว Module ภายนอกแยกกับ Module ที่เขียนเอง
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 โดยปกติแล้ว Webpack จะ Build ใหม่ทุกครั้ง ซึ่งทำให้เสียเวลา ดังนั้นจึงมีแนวคิดขึ้นมาว่า ให้ Build ตัวที่น่าจะไม่ได้เปลี่ยนบ่อยๆก่อน หรือก็คือ Module ของภายนอกที่นำมาใช้ (เช่นมาจากการ `npm install`) โดย Build ไว้ก่อนรอบหนึ่ง แล้วเมื่อต้องการทำงานจริง ก็ค่อย Build ตัวที่จะเปลี่ยนบ่อยๆระหว่างการพัฒนา โดยต้องจัดการให้ตัวโปรเจ็กต์ไปอ่านไฟล์ที่ Build เสร็จก่อนหน้านี้มาใช้ (ที่มา: https://github.com/erikras/react-redux-universal-hot-example/issues/616#issuecomment-228956242)
+
+### การทำงานของ HardSourceWebpackPlugin
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ใช้เพื่อช่วยในการ Cache Modules ในการรันครั้งแรกจะช้า แต่หลังจากที่ Cache ไว้แล้วจะให้ผลดีในเรื่องของความเร็วในการ Build มาก (ที่มา: https://github.com/mzgoddard/hard-source-webpack-plugin)
 
 <p align="center">
   <img src="./assets/related_topics/3-3.png"><br>
