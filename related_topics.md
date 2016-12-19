@@ -131,3 +131,88 @@ _base.React.createElement(
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 โดยธรรมชาติของการพัฒนาแอพพลิเคชั่นนั้น การเปลี่ยน Module ภายนอกที่ใช้ไม่ได้เกิดขึ้นบ่อยนัก ดังนั้นการ Optimize แบบนี้จึงส่งผลมาก และช่วยให้การพัฒนาแอพพลิเคชั่นเป็นไปได้อย่างราบรื่นมากขึ้น
+
+## CircleCI
+> *TODO: เขียนและใส่รูป*
+
+## Google Cloud Platform
+- https://cloud.google.com/products
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ใช้ในโปรเจกต์ Social Monitoring โดย Service ที่นำมาใช้ ได้แก่
+1. `Google App Engine`
+2. `Google Compute Engine`
+3. `Google BigQuery`
+4. `Google Datastore`
+
+### Google App Engine
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+เป็น PaaS (Platform as a Service) ข้อดีคือมีการ Auto Scaling และ สามารถตั้งค่าต่างๆได้ง่าย ผ่านไฟล์ `.yaml` นำมาใช้ Deploy Code ของโปรเจ็กต์ Social Monitoring สำหรับ Production
+
+#### ตัวอย่างการตั้งค่า .yaml
+
+`management-service.yaml`
+```yml
+runtime: node
+vm: true
+
+skip_files:
+  - ^(.*/)?.*/node_modules/.*$
+
+service: management-service
+
+env_variables:
+  SERVICE_NAME: 'management-service'
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 3
+  cool_down_period_sec: 300
+  cpu_utilization:
+    target_utilization: 0.5
+```
+
+กรณีต้องการใช้งานร่วมกับ pm2
+
+- เปลี่ยนการตั้งค่า `runtime node` เป็น `runtime custom`
+- สร้างไฟล์ `Dockerfile`
+- สร้างไฟล์ `.dockerignore`
+
+`Dockerfile`
+
+```bash
+FROM gcr.io/google_appengine/nodejs
+RUN /usr/local/bin/install_node '~6.4'
+COPY . /app/
+RUN npm install -g yarn
+RUN yarn
+RUN yarn global add pm2
+CMD pm2-docker start ./build/bin/server.js -i 0
+```
+
+เมื่อรัน Command ด้านล่างนี้ จะทำงานโดยเริ่มต้นจากการที่นำโค้ดมา Build Docker Container และ ส่งไป Deploy ที่ Google App Engine
+
+```bash
+gcloud -q app deploy filename.yaml --promote --version=1
+```
+
+> *TODO: ใส่รูป App Engine*
+
+### Google Compute Engine
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ใช้งานเหมือน VPS ทั่วไป สามารถ SSH เข้าไปทำการตั้งค่าต่างๆได้ นำมาใช้งานในโปรเจกต์ Social Monitoring ในการนำ Code ใน branch `dev` ไป Deploy เองอัตโนมัติผ่าน CircleCI  เพื่อให้สามารถส่งให้ลูกค้าทดสอบได้อย่างเป็นปัจุบัน
+
+> TODO : Write...
+
+### Google BigQuery
+> *TODO: ใส่รูป BigQuery*
+
+### Google Datastore
+> *TODO: ใส่รูป Datastore*
+
+### ข้อดี
+Google App Engine และ Google Compute Engine
+สามารถเข้าถึง Google Datastore และ Google BigQuery ได้อย่างรวดเร็ว เนื่องจาก Network ภายในของ Google
+
+### ข้อเสีย
+> TODO: หาทางแก้ยาก เวลาติดปัญหา
