@@ -237,6 +237,7 @@ https://github.com/runnables/eslint-config-runnables
 ในระหว่างการทำงาน เมื่อเจอปัญหาที่ไม่สามารถใช้ Package ของผู้อื่น หรือต้องการเพิ่ม Feature บางอย่างที่ผู้อื่นยังไม่เคยทำไว้ ก็ได้ทำการแยกส่วนนั้นออกมาเปิดเป็น Repository ใหม่แบบ Public รวมทั้งการส่ง Pull Request และ การแจ้ง Issues ซึ่งมีรายการดังนี้
 
 ##### ศุภณัฐ
+* https://github.com/zugarzeeker/angular-pixelpaint แก้ไขรูปภาพแบบ Pixel สามารถแบ่งเป็น Layer ได้ สำหรับ AngularJS ใช้ในโปรเจ็กต์ Pixelate
 * https://github.com/zugarzeeker/redux-modern-crud เพื่อให้ใช้งานร่วมกับ Middleware ของ `react-redux-universal-hot-example`
 * https://github.com/zugarzeeker/modern-express-joi เพื่อให้ง่ายต่อการใช้งานระหว่าง `Joi` (ตัวช่วยในการ Validate) และ `Express` (RESTFul API Framework)
 * https://github.com/typicode/json-server/issues/434 ใช้งานในการ Mock Endpoint API ของเว็บแอพพลิเคชันแหล่งรวมบริการรับสอนพิเศษ สำหรับกรณีที่ Backend ยังไม่เสร็จสมบูรณ์
