@@ -1,16 +1,12 @@
 <h1 align="center">ลักษณะของงานที่ปฏิบัติ</h1>
 
-## 1. บันทึกประจำวันการปฏิบัติงาน
-
-> *TODO: เพิ่มตาราง*
-
 ## 2. รายละเอียดของงานที่ปฏิบัติ
 
 ***เนื่องจากงานหลายชิ้นอยู่ภายใต้ Non-disclosure agreement จึงไม่สามารถเปิดเผยชื่อผลงานได้***
 
 > ชิ้นงานข้อ 2.1 กับ 2.2 ทำเสร็จสิ้นในช่วงฝึกงานปิดเทอม
 
-#### 2.1 พัฒนาระบบ Admin ส่วน Frontend ด้วย AngularJS
+### 2.1 พัฒนาระบบ Admin ส่วน Frontend ด้วย AngularJS
 
 <p align="center">
   <img src="./assets/task/2-1.png">
@@ -39,7 +35,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 โดยใช้โครงสร้างของ AdminLTE เป็นหลัก ซึ่งปัญหาที่เจอโดยมากเกิดจาก Learning curve ที่ใช้เวลาในการศึกษาการใช้ Framework ที่ไม่เคยใช้มาก่อน แต่ก็ถือได้ว่าเป็นงานที่ไม่ซับซ้อนเกินไปนัก เหมาะเป็นงานชิ้นแรกสำหรับการเรียนรู้วิธีการทำงานขององค์กร
 
-#### 2.2 พัฒนาระบบ Pixelate รูปภาพด้วย AngularJS
+### 2.2 พัฒนาระบบ Pixelate รูปภาพด้วย AngularJS
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 เป็นงานที่ทำให้กับผู้ว่าจ้างรายเดียวกับงานในข้อ 2.1 ซึ่งเป็นระบบที่ให้ลูกค้าสามารถนำรูปภาพที่ต้องการมาทำการ Pixelate เพื่อนำไปสั่งซื้อสินค้าตัวต่อเพื่อนำมาต่อเป็นรูปภาพผลลัพธ์ได้
 
@@ -60,7 +56,7 @@
   <small>รูปที่ 2-4 ตัวอย่างบางส่วนของ PDF คำแนะนำการต่อรูป Pixelate</small>
 </p>
 
-#### 2.3 พัฒนาเว็บแอพพลิเคชันสำหรับแนะนำการรักษาพยาบาลและการท่องเที่ยวในต่างประเทศ ด้วย ReactJS, Redux
+### 2.3 พัฒนาเว็บแอพพลิเคชันสำหรับแนะนำการรักษาพยาบาลและการท่องเที่ยวในต่างประเทศ ด้วย ReactJS, Redux
 
 <p align="center">
   <img src="./assets/task/2-5.png">
@@ -103,7 +99,7 @@
   <small>รูปที่ 2-9 Screenshot หน้าข้อมูลแพ็คเกจ ของเว็บไซต์แนะนำการรักษาพยาบาลและการท่องเที่ยว</small>
 </p>
 
-#### 2.4 พัฒนาเว็บแอพพลิเคชันสำหรับบริการ Social Monitoring ด้วย ReactJS, Redux, Node.js, Google DataStore, Google BigQuery, Google AppEngine, Google ComputeEngine
+### 2.4 พัฒนาเว็บแอพพลิเคชันสำหรับบริการ Social Monitoring ด้วย ReactJS, Redux, Node.js, Google DataStore, Google BigQuery, Google AppEngine, Google ComputeEngine
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ในงานที่กล่าวมาก่อนหน้า ข้าพเจ้าทั้งสองร่วมกันทำส่วนเดียวกัน โดยสับเปลี่ยนกันช่วยเหลือแต่ละจุดตามงานที่มี แต่งานชิ้นนี้แบ่งกันชัดเจน โดยเอกดนัยทำส่วนของ Frontend และศุภณัฐทำส่วนของ Backend
 
@@ -130,27 +126,37 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 นอกจากนี้ยังมีการ Setup CircleCI ให้รัน Automated Test ของ Code ที่ push ขึ้น github ถ้าหากผ่านทุก Test Case จะทำการ ตามที่ได้ Set ไว้ แต่หาก เกิด Error ขึ้น เนื่องจาก Run Test Case ไม่ผ่าน หรือ ไม่สามารถ Deploy ได้ ก็จะแจ้งมายัง Slack ที่ใช้สื่อสารกันในบริษัท โดยมีการใช้งานร่วมกับ emoticon (:ambulance: :zap:) ใน commit message ในการกำหนดสถานะการ Deploy ให้แตกต่างกัน
 
-> *TODO: Capture รูปกราฟตอนมันใช้งานเยอะๆถ้ามี ถ้าไม่มีช่างมัน*
+> *TODO: Capture รูปกราฟตอนมันใช้งานเยอะๆถ้ามี ถ้าไม่มีช่างมัน (2-11)*
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ขั้นตอนดำเนินการคือ การให้องค์กรที่ต้องการใช้งานมาลงทะเบียนสร้างองค์กรของตนในระบบไว้ แล้วจากนั้นจึงสร้างโปรเจ็กต์ขึ้นมา โดยระบุข้อมูลว่าต้องการข้อความแบบไหนบ้าง แล้วตัว Crawler ก็จะทำการส่งข้อความที่ตรงเงื่อนไขเข้าสู่โปรเจ็กต์โดยมีจะมี Analyst คอยวิเคราะห์ข้อความดังกล่าว และใส่ข้อมูลระบุคุณสมบัติของข้อความนั้นๆ ว่าพูดถึงองค์กรในแง่บวกหรือลบ และพูดถึงในหัวข้อไหน ซึ่งทางองค์กรเองก็สามารถสร้าง Dashboard เพื่อดูการ Visualization สรุปข้อมูลได้ โดยใช้บริการจาก Third-party (เช่น Tableau)
 
-> *TODO: Capture รูป Create project*
+<p align="center">
+  <img src="./assets/task/2-12.png">
+  <small>รูปที่ 2-12 Screenshot หน้าสร้างโปรเจ็กต์ ของบริการ Social Monitoring</small>
+</p>
 
-> *TODO: Capture รูป Project setting (Rule ดูดีสุด)*
+<p align="center">
+  <img src="./assets/task/2-13.png">
+  <small>รูปที่ 2-13 Screenshot หน้าแก้ไขข้อมูลโปรเจ็กต์ ของบริการ Social Monitoring</small>
+</p>
 
-> *TODO: Capture รูป Meta grid*
+<p align="center">
+  <img src="./assets/task/2-14.png">
+  <small>รูปที่ 2-14 Screenshot ส่วนจัดการ Meta ของบริการ Social Monitoring</small>
+</p>
 
-> *TODO: Capture รูป Tableau*
+<p align="center">
+  <img src="./assets/task/2-15.png">
+  <small>รูปที่ 2-15 Screenshot หน้าดู Visualization โดย Tableau ของบริการ Social Monitoring</small>
+</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ซึ่งหนึ่งในสิ่งที่ท้าทายของงานชิ้นนี้ก็คือการออกแบบการจัดการ Permission ต่างๆ เพราะมีผู้ใช้งานที่มีสิทธิ์ต่างกันหลายแบบมาก เช่น Super Admin ที่จัดการได้ทุกอย่างบนเว็บไซต์, Admin ขององค์กร ที่สามารถจัดการบุคคลในองค์กร หรือสร้างโปรเจ็กต์ใหม่ๆได้, Admin/Project Owner ที่มีสิทธิ์จัดการข้อมูลโปรเจ็กต์ต่างๆ, Analyst ที่มีสิทธิ์แค่การดูข้อความในโปรเจ็กต์ และใส่ข้อมูลให้กับข้อความต่างๆเท่านั้น ไม่มีสิทธิ์ในการลบโปรเจ็กต์ หรือจัดการเปลี่ยนการตั้งค่าของโปรเจ็กต์ และประเภทอื่นๆอีกมากมาย ทำให้ได้เรียนรู้วิธีการออกแบบการเก็บข้อมูล และวิธีการตรวจสอบสิทธิ์ที่มีประสิทธิภาพ รวมถึง Frontend ก็ต้องกำหนดการเข้าถึงหน้าต่างๆของผู้ใช้แต่ละคนให้เข้าถึงได้เฉพาะหน้าที่ควรเข้าถึงได้ และแสดง Function ต่างๆเท่าที่ผู้ใช้คนนั้นมีสิทธิ์
 
-> *TODO: นัทเขียนข้อมูลเพิ่มเติม/แก้ส่วนที่มั่วที*
+> *TODO: Capture รูปพวกหน้า BigQuery, DataStore, AppEngine, ComputeEngine แล้ว Censor พวก Sensitive Information (ใส่ Filter > Pixelate > Mosaic 20px ใน Photoshop ถ้าขี้เกียจทำแคปส่งมาก็ได้) (2-16) (2-17)*
 
-> *TODO: Capture รูปพวกหน้า BigQuery, DataStore, AppEngine, ComputeEngine แล้ว Censor พวก Sensitive Information (ใส่ Filter > Pixelate > Mosaic 20px ใน Photoshop ถ้าขี้เกียจทำแคปส่งมาก็ได้)*
-
-#### 2.5 พัฒนาเว็บแอพพลิเคชันแหล่งรวมบริการรับสอนพิเศษ ด้วย ReactJS, Redux, Node.js, MongoDB, Google Firebase
+### 2.5 พัฒนาเว็บแอพพลิเคชันแหล่งรวมบริการรับสอนพิเศษ ด้วย ReactJS, Redux, Node.js, MongoDB, Google Firebase
 
 > งานชิ้นนี้เพิ่งรับเข้ามาช่วงต้นเดือนธันวาคม และยังไม่ถึงช่วงที่จะเริ่มดำเนินการ ณ​ เวลาที่รายงานนี้ถูกเขียนขึ้น จึงยังไม่มีข้อมูลมากนัก
 
@@ -160,15 +166,34 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 โดยเป็นงานที่วางแผนไว้ว่าจะทดลองหลายๆสิ่ง เช่น `Redux Saga` เป็นต้น และถึงแม้จะยังไม่ได้เริ่มงานนี้โดยตรง แต่ก็เตรียมการหลายๆอย่างไว้แล้ว เช่น config eslint, เตรียม boilerplate ดังที่จะกล่าวอย่างละเอียดในหัวข้อถัดไป
 
-#### 2.6 การเตรียม Environment การทำงานที่มีประสิทธิภาพ
+### 2.6 การเตรียม Environment การทำงานที่มีประสิทธิภาพ
 
-##### eslint-config-runnables
+#### eslint-config-runnables
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+https://github.com/runnables/eslint-config-runnables
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+เป็นการตั้งค่า Linter ของทีม Runnables (โดยคำอธิบายของ Linter อยู่ในหัวข้อทฤษฎีที่เกี่ยวข้อง)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งเน้นการปรับจาก [eslint ของ airbnb](https://www.npmjs.com/package/eslint-config-airbnb) ที่ทางทีมเห็นว่ามีมาตรฐานอยู่แล้ว แต่ทำการปรับเปลี่ยนบางอย่างเพื่อให้เข้ากับเครื่องมือต่างๆที่ทางทีมใช้ เช่น การใช้ [Lodash](https://lodash.com/) ซึ่งมี [eslint plugin ที่ระบุกฎสำหรับการใช้ Lodash ที่สวยงาม](https://github.com/eslint-plugins/eslint-plugin-lodash)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งการสร้าง Repository ขึ้นมาสำหรับการจัดการ eslint โดยเฉพาะ ทำให้การนำไปใช้ในโครงการถัดๆไปทำได้สะดวกยิ่งขึ้น ซึ่งปกติการใช้ eslint จะต้องมีไฟล์ `.eslintrc` ในการกำหนดมาตรฐานโค้ด โดยภายในไฟล์นั้นมักจะมีกฏมากมายอยู่ ทำให้ไฟล์อ่านยาก และการแก้ในที่นั้นที่เดียวก็ไม่ส่งผลให้โครงการอื่นๆร่วมใช้งานกฏนั้นด้วย แต่เมื่อใช้ `eslint-config-runnables` แล้ว ภายในไฟล์ `.eslintrc` ก็สามารถมีเพียงคำสั่งเดียว คือ
+
+```
+{
+  "extends": "runnables"
+}
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งการทำเช่นนี้ทำให้โครงการใดก็ตามที่ใช้ Config eslint แบบนี้จะแน่ใจได้ว่าทุกโครงการมี Coding standard ที่เหมือนกัน ทำให้การทำงานเป็นไปอย่างมีประสิทธิภาพ
+
+#### การเพิ่มประสิทธิภาพของ Webpack
+
 > *TODO: เขียนข้อมูล*
 
-##### การเพิ่มประสิทธิภาพของ Webpack
-
-> *TODO: เขียนข้อมูล*
-
-#### 2.7 การ Contribute to Open source
+### 2.7 การ Contribute to Open source
 
 > *TODO: ใส่พวก Repo ใหม่ / Pull requests / Issues*
