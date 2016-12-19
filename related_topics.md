@@ -314,4 +314,5 @@ Google App Engine และ Google Compute Engine
 สามารถเข้าถึง Google Datastore และ Google BigQuery ได้อย่างรวดเร็ว เนื่องจาก Network ภายในของ Google
 
 ### ข้อเสีย
-> TODO: หาทางแก้ยาก เวลาติดปัญหา
+หากติดปัญหาจะแก้เองค่อนข้างลำบากเนื่องจากกลุ่มผู้ใช้ Google Cloud Platform ไม่ได้มีมากเท่าที่ควร
+และ การอ่านจากคู่มือที่ให้มาเข้าใจค่อนข้างยาก
