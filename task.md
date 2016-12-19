@@ -222,7 +222,7 @@ https://github.com/runnables/eslint-config-runnables
 </p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-และเมื่อเกิดการ Cache แล้ว การ Build ครั้งถัดๆไปก็เร็วขึ้นอยา่งเห็นได้ชัด ซึ่งใช้เวลาไปทั้งหมด 1671 milliseconds
+และเมื่อเกิดการ Cache แล้ว การ Build ครั้งถัดๆไปก็เร็วขึ้นอย่างเห็นได้ชัด ซึ่งใช้เวลาไปทั้งหมด 1671 milliseconds
 
 <p align="center">
   <img src="./assets/task/2-20.png">
@@ -232,12 +232,9 @@ https://github.com/runnables/eslint-config-runnables
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ซึ่งเวลาที่ลดลงไม่เพียงแต่เวลาสำหรับการ Build เท่านั้น แต่ยังรวมไปถึงเวลาที่ใช้ในการ Hot Module Replacement (HMR) ด้วย
 
-### 2.7 การ Contribute to Open source
+### 2.7 การ Contribute กับ Open source
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-ซึ่งระหว่างการทำงาน เมื่อเจอปัญหาที่ไม่สามารถใช้ Package ของผู้อื่น หรือต้องการเพิ่ม Feature บางอย่างที่ผู้อื่นยังไม่เคยทำไว้ ก็ได้ทำการแยกส่วนนั้นออกมาเปิดเป็น Repository ใหม่แบบ Public เพื่อเผยแพร่ให้ผู้อื่นที่สนใจสามารถนำไปใช้ได้ด้วย
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-โดยรวมทั้งการสร้าง Repository ใหม่, การส่ง Pull Request และ การแจ้ง Issues ซึ่งมีรายการดังนี้
+ในระหว่างการทำงาน เมื่อเจอปัญหาที่ไม่สามารถใช้ Package ของผู้อื่น หรือต้องการเพิ่ม Feature บางอย่างที่ผู้อื่นยังไม่เคยทำไว้ ก็ได้ทำการแยกส่วนนั้นออกมาเปิดเป็น Repository ใหม่แบบ Public รวมทั้งการส่ง Pull Request และ การแจ้ง Issues ซึ่งมีรายการดังนี้
 
 ##### ศุภณัฐ
 * https://github.com/zugarzeeker/redux-modern-crud
@@ -246,6 +243,6 @@ https://github.com/runnables/eslint-config-runnables
 * https://github.com/villadora/express-http-proxy/pull/158
 
 ##### เอกดนัย
-* https://github.com/koorgoo/ngCropper/pull/34
-* https://github.com/JedWatson/react-select/pull/1416
-* https://github.com/blutarche/react-ui-tree
+* https://github.com/koorgoo/ngCropper/pull/34 โดยเป็นการเพิ่ม Feature ของ Module ใน AngularJS
+* https://github.com/JedWatson/react-select/pull/1416 โดยเป็นการเพิ่ม Feature ของ Component ใน ReactJS
+* https://github.com/blutarche/react-ui-tree โดยเป็นการเพิ่ม Feature ของ Component ใน ReactJS (แต่เนื่องจากยังไม่ได้ Refactor โค้ดให้ดีจึงยังไม่ได้ส่งเป็น Pull Request)
