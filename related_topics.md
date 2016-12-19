@@ -132,7 +132,9 @@ _base.React.createElement(
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 โดยธรรมชาติของการพัฒนาแอพพลิเคชั่นนั้น การเปลี่ยน Module ภายนอกที่ใช้ไม่ได้เกิดขึ้นบ่อยนัก ดังนั้นการ Optimize แบบนี้จึงส่งผลมาก และช่วยให้การพัฒนาแอพพลิเคชั่นเป็นไปได้อย่างราบรื่นมากขึ้น
 
-## CircleCI
+## Continuous Integration (CI)
+- Gitlab CI
+- Circle CI
 > *TODO: เขียนและใส่รูป*
 
 ## Google Cloud Platform
