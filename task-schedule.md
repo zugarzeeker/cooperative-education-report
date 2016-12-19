@@ -93,7 +93,7 @@
 | 24 พ.ย. 2559 | *ลาไปงาน CSS + JS Conference ที่สิงคโปร์*                | Fix project creation (Social)                     |
 | 25 พ.ย. 2559 | *ลาไปงาน CSS + JS Conference ที่สิงคโปร์*                | Improve keywords tree (Social)                    |
 | 28 พ.ย. 2559 | Rule Frontend (Social)                               | Improve Webpack Performance (Social)              |
-| 29 พ.ย. 2559 | Fixed style (Social)                                 | Improve Webpack Performance (Social)              |
+| 29 พ.ย. 2559 | *ลาไปงาน Progressive Web App Roadshow*               | Improve Webpack Performance (Social)              |
 | 30 พ.ย. 2559 | Meta Message Card Frontend (Social)                  | Fix webpack bug (Social)                          |
 
 ### เดือนธันวาคม
