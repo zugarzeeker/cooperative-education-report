@@ -237,10 +237,10 @@ https://github.com/runnables/eslint-config-runnables
 ในระหว่างการทำงาน เมื่อเจอปัญหาที่ไม่สามารถใช้ Package ของผู้อื่น หรือต้องการเพิ่ม Feature บางอย่างที่ผู้อื่นยังไม่เคยทำไว้ ก็ได้ทำการแยกส่วนนั้นออกมาเปิดเป็น Repository ใหม่แบบ Public รวมทั้งการส่ง Pull Request และ การแจ้ง Issues ซึ่งมีรายการดังนี้
 
 ##### ศุภณัฐ
-* https://github.com/zugarzeeker/redux-modern-crud
-* https://github.com/zugarzeeker/modern-express-joi
-* https://github.com/typicode/json-server/issues/434
-* https://github.com/villadora/express-http-proxy/pull/158
+* https://github.com/zugarzeeker/redux-modern-crud เพื่อให้ใช้งานร่วมกับ Middleware ของ `react-redux-universal-hot-example`
+* https://github.com/zugarzeeker/modern-express-joi เพื่อให้ง่ายต่อการใช้งานระหว่าง `Joi` (ตัวช่วยในการ Validate) และ `Express` (RESTFul API Framework)
+* https://github.com/typicode/json-server/issues/434 ใช้งานในการ Mock Endpoint API ของเว็บแอพพลิเคชันแหล่งรวมบริการรับสอนพิเศษ สำหรับกรณีที่ Backend ยังไม่เสร็จสมบูรณ์
+* https://github.com/villadora/express-http-proxy/pull/158 แก้ไขคำผิดของ Document
 
 ##### เอกดนัย
 * https://github.com/koorgoo/ngCropper/pull/34 โดยเป็นการเพิ่ม Feature ของ Module ใน AngularJS
