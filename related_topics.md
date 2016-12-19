@@ -223,7 +223,7 @@ gcloud -q app deploy filename.yaml --promote --version=1
 ข้อจำกัดของ BigQuery คือไม่สามารถเปลี่ยนแปลงข้อมูลที่เก็บลงไปแล้วได้ นิยมใช้งานในรูปแบบการเก็บ Log มาวิเคราะห์ แต่หากว่า Log มากเกินไป ก็จะแบ่งตารางตามช่วงเวลาที่เรียกว่า `time-partitioned` เพื่อให้ลดค่าใช้จ่าย และ ปริมาณข้อมูลลงในการ Query (ที่มา: https://cloud.google.com/bigquery/docs/partitioned-tables)
 
 สำหรับ BigQuery จะมี Type Record เก็บได้หลาย Field ซึ่งทำให้มีการใช้งานในรูปแบบของ Nested Data
-สามารถเก็บแบบ หลาย Record ใน 1 Column ได้้ (ที่มา: https://cloud.google.com/bigquery/data-types)
+สามารถเก็บแบบ หลาย Record ใน 1 Column ได้ (ที่มา: https://cloud.google.com/bigquery/data-types)
 
 วิธีการจัดการกับ Nested และ Repeated Fields
 ใช้ Flatten กับ Field ที่เป็น Record ผลลัพธ์ที่ได้จะเหมือนผลคูณคาร์ทีเชียน สำหรับ Repeated Fields
