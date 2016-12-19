@@ -135,7 +135,7 @@ _base.React.createElement(
 ## Continuous Integration (CI)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 เพื่อให้การทำงานเป็นไปอย่างราบรื่น Build -> Test -> Deploy
-การทำงานคือหาก push โค้ดขึ้นไปบน github หรือ gitlab ผ่าน จะมีการ Setup CI ให้รัน Test Case หากรันผ่านก็จะรัน Script สำหรับ Deploy เองอัตโนมัติไปยัง Development Server แต่ถ้าไม่ผ่านจะแจ้งมายัง Slack ที่ใช้สื่อสารกันในบริษัท
+การทำงานคือหาก push โค้ดขึ้นไปบน github หรือ gitlab ผ่าน จะมีการ Setup CI ให้รัน Test Case หากรันผ่านก็จะรัน Script สำหรับ Deploy เองอัตโนมัติไปยัง Development Server แต่ถ้าไม่ผ่านจะแจ้งมายัง Slack ที่ใช้สื่อสารกันในบริษัท ซึ่งจะเป็นประโยชน์ในการทำงานเป็นทีม และ รวมถึง Flow ในการใช้ Git ร่วมกันด้วย
 
 โดยใน github สามารถใช้งานร่วมกับ `CircleCI` แต่ gitlab จะมี CI ติดมาด้วยกันอยู่แล้ว
 นอกจาก `CircleCI` ยังมี `TravisCI`, `AppVeyor` และอื่นๆอีกมากมาย
