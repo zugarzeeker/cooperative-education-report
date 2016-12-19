@@ -248,11 +248,59 @@ table.create(options, callback);
 ```
 
 ### Google Datastore
+> Cloud Datastore is a highly-scalable NoSQL database for your web and mobile applications
+
+> ที่มา: https://cloud.google.com/datastore/
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+เป็น NoSQL Document Database เก็บในรูปแบบ `key` และ `value` ข้อดีคือ สามารถใช้งานได้โดยไม่ต้องห่วงเรื่องการ Scale Database
+เขียนและอ่านได้อย่างรวดเร็ว ข้อเสียคือ การ Query ทำได้ค่อนข้างจำกัด ไม่สามารถใช้การ `or` ได้ (Operator ในการ Filter ที่ใช้ได้มีแค่ `=`, `<=`, `<`, `>`, `>=`)
+
 > *TODO: ใส่รูป Datastore*
 
-> *TODO: Write about Composite Index*
+สำหรับ Node.js จะมี `gstore-node` เป็น entities modeling Library สำหรับ Google Datastore คล้ายกับ `mongoose` สำหรับ object modeling สำหรับ `MongoDB`
+- https://github.com/sebelga/gstore-node
+- https://github.com/Automattic/mongoose
 
-> *TODO: Write about gstore-node*
+`ตัวอย่างการสร้าง Schema ด้วย gstore-node`
+```js
+const userSchema = new Schema({
+  firstname: { type: 'string' },
+  lastname: { type: 'string' },
+  age: {type: 'number'}
+});
+```
+
+หากต้องการ Filter หรือ Sort อย่างน้อย 2 key พร้อมกัน จะต้องทำการสร้าง `Composite Index` ก่อน จึงจะสามารถใช้งานได้
+(https://cloud.google.com/appengine/docs/python/config/indexconfig)
+
+`ตัวอย่าง`
+```js
+query.filter('firstname =', 'Google').filter('size <', 400);
+```
+
+`คำสั่งในการจัดการ index`
+```bash
+gcloud preview datastore create-indexes ./index.yaml
+gcloud preview datastore cleanup-indexes ./index.yaml
+```
+
+`index.yaml`
+```yml
+indexes:
+- kind: User
+  ancestor: no
+  properties:
+  - name: firstname
+    direction: desc
+  - name: size
+```
+
+> ใช้งานได้เฉพาะชื่อไฟล์ index.yaml
+
+> ที่มา: http://stackoverflow.com/questions/37695614/error-when-creating-indexes-for-flexible-cloud-datastore-unexpected-attribute
+
+<!--  TODO: datastore-deep-populate -->
 
 ### ข้อดี
 Google App Engine และ Google Compute Engine
