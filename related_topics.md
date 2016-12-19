@@ -207,7 +207,18 @@ gcloud -q app deploy filename.yaml --promote --version=1
 > TODO : Write...
 
 ### Google BigQuery
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ใช้งานคล้ายๆ SQL แต่มีหลายคำสั่งแตกต่างกัน สามารถ Query ข้อมูลปริมาณมาก และ คำสั่งซับซ้อนได้ในเวลาไม่กี่วินาที มีการคิดราคาตามที่ใช้งาน โดยคิดจาก ปริมาณข้อมูลที่ต้องค้นหา และ ปริมาณข้อมูลที่นำออกมา นอกจากนี้ยังสามารถใช้งานได้กับ Node.js
+
 > *TODO: ใส่รูป BigQuery*
+<!--  -->
+> Config params function ?
+
+> Nested Object ?
+
+> Update Schema ?
+
+> Creating View ?
 
 ### Google Datastore
 > *TODO: ใส่รูป Datastore*
