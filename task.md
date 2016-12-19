@@ -202,9 +202,50 @@ https://github.com/runnables/eslint-config-runnables
 ซึ่งการทำเช่นนี้ทำให้โครงการใดก็ตามที่ใช้ Config eslint แบบนี้จะแน่ใจได้ว่าทุกโครงการมี Coding standard ที่เหมือนกัน ทำให้การทำงานเป็นไปอย่างมีประสิทธิภาพ
 
 #### การเพิ่มประสิทธิภาพของ Webpack
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+การทำงานโดยปกติของทีม จะใช้ [Webpack](https://github.com/webpack/webpack) ในการช่วยจัดการ ซึ่ง [Boilerplate ที่ทีมใช้ในการพัฒนาเว็บไซต์](https://github.com/erikras/react-redux-universal-hot-example) มีการ Config webpack ที่ส่งผลต่อเวลาในการ Build ที่นานเกินว่าที่ทีมต้องการ จึงต้องมีการปรับแต่ง ซึ่งเทคนิควิธีต่างๆที่ใช้ในการปรับแต่ง จะอธิบายอย่างละเอียดในหัวข้อทฤษฎีที่เกี่ยวข้องเป็นการถัดไป
 
-> *TODO: เขียนข้อมูล*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+โดยการ Build ครั้งแรกใช้เวลาทั้งหมด 23088 milliseconds
+
+<p align="center">
+  <img src="./assets/task/2-18.png">
+  <small>รูปที่ 2-18 การ Build Webpack ก่อนจะปรับแต่ง</small>
+</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งหนึ่งในวิธีที่ใช้ในการลดเวลาการ Build คือการ Cache ไฟล์ที่ไม่ได้เปลี่ยนแปลงนับจากการ Build ครั้งล่าสุด ซึ่งการ Build ครั้งแรกนี้ก็ใช้เวลาไปพอสมควร แต่ก็ใช้เวลาน้อยกว่าก่อนปรับแต่งอยู่ดี โดยใช้เวลาทั้งหมด 16725 milliseconds
+
+<p align="center">
+  <img src="./assets/task/2-19.png">
+  <small>รูปที่ 2-19 การ Build Webpack ครั้งแรกหลังการปรับแต่ง</small>
+</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+และเมื่อเกิดการ Cache แล้ว การ Build ครั้งถัดๆไปก็เร็วขึ้นอยา่งเห็นได้ชัด ซึ่งใช้เวลาไปทั้งหมด 1671 milliseconds
+
+<p align="center">
+  <img src="./assets/task/2-20.png">
+  <small>รูปที่ 2-20 การ Build Webpack หลังการปรับแต่ง และมีการ Cache</small>
+</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งเวลาที่ลดลงไม่เพียงแต่เวลาสำหรับการ Build เท่านั้น แต่ยังรวมไปถึงเวลาที่ใช้ในการ Hot Module Replacement (HMR) ด้วย
 
 ### 2.7 การ Contribute to Open source
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ซึ่งระหว่างการทำงาน เมื่อเจอปัญหาที่ไม่สามารถใช้ Package ของผู้อื่น หรือต้องการเพิ่ม Feature บางอย่างที่ผู้อื่นยังไม่เคยทำไว้ ก็ได้ทำการแยกส่วนนั้นออกมาเปิดเป็น Repository ใหม่แบบ Public เพื่อเผยแพร่ให้ผู้อื่นที่สนใจสามารถนำไปใช้ได้ด้วย
 
-> *TODO: ใส่พวก Repo ใหม่ / Pull requests / Issues*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+โดยรวมทั้งการสร้าง Repository ใหม่, การส่ง Pull Request และ การแจ้ง Issues ซึ่งมีรายการดังนี้
+
+##### ศุภณัฐ
+* https://github.com/zugarzeeker/redux-modern-crud
+* https://github.com/zugarzeeker/modern-express-joi
+* https://github.com/typicode/json-server/issues/434
+* https://github.com/villadora/express-http-proxy/pull/158
+
+##### เอกดนัย
+* https://github.com/koorgoo/ngCropper/pull/34
+* https://github.com/JedWatson/react-select/pull/1416
+* https://github.com/blutarche/react-ui-tree
