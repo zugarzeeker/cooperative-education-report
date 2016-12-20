@@ -142,7 +142,10 @@ _base.React.createElement(
 
 https://github.com/integrations/feature/continuous-integration
 
-> *TODO: ใส่รูป CircleCI*
+<p align="center">
+  <img src="./assets/related_topics/3-6.png"><br>
+  <small>รูปที่ 3-6 หน้า Dashboard ของ CircleCI</small>
+</p>
 
 ## Google Cloud Platform
 - https://cloud.google.com/products
@@ -205,30 +208,44 @@ CMD pm2-docker start ./build/bin/server.js -i 0
 gcloud -q app deploy filename.yaml --promote --version=1
 ```
 
-> *TODO: ใส่รูป App Engine*
+<p align="center">
+  <img src="./assets/related_topics/3-7.png"><br>
+  <small>รูปที่ 3-7 กราฟการใช้งานของ Google App Engine</small>
+</p>
 
 ### Google Compute Engine
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ใช้งานเหมือน VPS ทั่วไป สามารถ SSH เข้าไปทำการตั้งค่าต่างๆได้ นำมาใช้งานในโปรเจกต์ Social Monitoring ในการนำ Code ใน branch `dev` ไป Deploy เองอัตโนมัติผ่าน CircleCI  เพื่อให้สามารถส่งให้ลูกค้าทดสอบได้อย่างเป็นปัจุบัน
 
-> TODO : Write...
+<p align="center">
+  <img src="./assets/related_topics/3-8.png">
+  <small>รูปที่ 3-8 Screenshot หน้า Instances ต่างๆ ของ Google Compute Engine</small>
+</p>
 
 ### Google BigQuery
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ใช้งานคล้ายๆ SQL แต่มีหลายคำสั่งและการลักษณะเก็บข้อมูลแตกต่างกัน สามารถ Query ข้อมูลปริมาณมาก และ คำสั่งซับซ้อนได้ในเวลาไม่กี่วินาที มีการคิดราคาตามที่ใช้งาน โดยคิดจาก ปริมาณข้อมูลที่ต้องค้นหา และ ปริมาณข้อมูลที่นำออกมา นอกจากนี้ยังสามารถใช้งานได้กับ Node.js
 (https://googlecloudplatform.github.io/google-cloud-node/#/docs/bigquery/0.6.0/bigquery)
 
-> *TODO: ใส่รูป BigQuery*
+<p align="center">
+  <img src="./assets/related_topics/3-9.png"><br>
+  <small>รูปที่ 3-9 Screenshot หน้า Google BigQuery</small>
+</p>
 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ข้อจำกัดของ BigQuery คือไม่สามารถเปลี่ยนแปลงข้อมูลที่เก็บลงไปแล้วได้ นิยมใช้งานในรูปแบบการเก็บ Log มาวิเคราะห์ แต่หากว่า Log มากเกินไป ก็จะแบ่งตารางตามช่วงเวลาที่เรียกว่า `time-partitioned` เพื่อให้ลดค่าใช้จ่าย และ ปริมาณข้อมูลลงในการ Query (ที่มา: https://cloud.google.com/bigquery/docs/partitioned-tables)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 สำหรับ BigQuery จะมี Type Record เก็บได้หลาย Field ซึ่งทำให้มีการใช้งานในรูปแบบของ Nested Data
 สามารถเก็บแบบ หลาย Record ใน 1 Column ได้ (ที่มา: https://cloud.google.com/bigquery/data-types)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 วิธีการจัดการกับ Nested และ Repeated Fields
 ใช้ Flatten กับ Field ที่เป็น Record ผลลัพธ์ที่ได้จะเหมือนผลคูณคาร์ทีเชียน สำหรับ Repeated Fields
 (ที่มา: https://cloud.google.com/bigquery/docs/data)
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 หากต้องการ Copy Table ที่มีขนาดใหญ่ ต้องใส่ `allowLargeResults` ด้วยจึงจะใช้งานได้โดยไม่มี Error เกิดขึ้น
 (https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs#configuration.query.allowLargeResults)
 
@@ -242,6 +259,7 @@ const queryConfig = {
 bigquery.startQuery(queryConfig, callback);
 ```
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 การสร้าง View เพื่อใช้งานร่วมกับ Tableau
 (https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource)
 
@@ -263,8 +281,12 @@ table.create(options, callback);
 เป็น NoSQL Document Database เก็บในรูปแบบ `key` และ `value` ข้อดีคือ สามารถใช้งานได้โดยไม่ต้องห่วงเรื่องการ Scale Database
 เขียนและอ่านได้อย่างรวดเร็ว ข้อเสียคือ การ Query ทำได้ค่อนข้างจำกัด ไม่สามารถใช้การ `or` ได้ (Operator ในการ Filter ที่ใช้ได้มีแค่ `=`, `<=`, `<`, `>`, `>=`)
 
-> *TODO: ใส่รูป Datastore*
+<p align="center">
+  <img src="./assets/related_topics/3-10.png"><br>
+  <small>รูปที่ 3-10 Screenshot หน้า Google DataStore</small>
+</p>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 สำหรับ Node.js จะมี `gstore-node` เป็น entities modeling Library สำหรับ Google Datastore คล้ายกับ `mongoose` สำหรับ object modeling สำหรับ `MongoDB`
 - https://github.com/sebelga/gstore-node
 - https://github.com/Automattic/mongoose
@@ -278,6 +300,7 @@ const userSchema = new Schema({
 });
 ```
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 หากต้องการ Filter หรือ Sort อย่างน้อย 2 key พร้อมกัน จะต้องทำการสร้าง `Composite Index` ก่อน จึงจะสามารถใช้งานได้
 (https://cloud.google.com/appengine/docs/python/config/indexconfig)
 
@@ -293,7 +316,7 @@ gcloud preview datastore cleanup-indexes ./index.yaml
 ```
 
 `index.yaml`
-```yml
+```yaml
 indexes:
 - kind: User
   ancestor: no
@@ -307,12 +330,12 @@ indexes:
 
 > ที่มา: http://stackoverflow.com/questions/37695614/error-when-creating-indexes-for-flexible-cloud-datastore-unexpected-attribute
 
-<!--  TODO: datastore-deep-populate -->
-
 ### ข้อดี
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Google App Engine และ Google Compute Engine
 สามารถเข้าถึง Google Datastore และ Google BigQuery ได้อย่างรวดเร็ว เนื่องจาก Network ภายในของ Google
 
 ### ข้อเสีย
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 หากติดปัญหาจะแก้เองค่อนข้างลำบากเนื่องจากกลุ่มผู้ใช้ Google Cloud Platform ไม่ได้มีมากเท่าที่ควร
 และ การอ่านจากคู่มือที่ให้มาเข้าใจค่อนข้างยาก
