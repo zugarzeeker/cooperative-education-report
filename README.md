@@ -23,7 +23,7 @@ runnables.co.th
 - สารบัญรูป
 - สารบัญตาราง
 - [บทนำ](./05-preface.md)
-- [ลักษณะของงานปฏิบัติ](./06-task-schedule.md)
+- [ลักษณะของงานปฏิบัติ](./06-1-task-schedule.md)
 - [ทฤษฎีที่เกี่ยวข้อง](./07-related_topics.md)
 - [บทสรุป](./08-conclusion.md)
 - [ข้อเสนอแนะ](./09-comment.md)
