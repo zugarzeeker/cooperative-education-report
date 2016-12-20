@@ -11,18 +11,21 @@ runnables.co.th
 
 ## รายชื่อนิสิต
 
-* ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
+* ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 
 ## หัวข้อ
 - [หน้าปก](./cover.md)
-- กิตติกรรมประกาศ
-- บทคัดย่อ
-- คำนำ
+- [กิตติกรรมประกาศ](./acknowledgement.md)
+- [บทคัดย่อ](./abstract.md)
+- [คำนำ](./foreword.md)
 - สารบัญ
 - สารบัญรูป
 - สารบัญตาราง
-- บทนำ
-- ลักษณะของงานปฏิบัติ
-- ทฤษฎีที่เกี่ยวข้อง
-- บทสรุป
+- [บทนำ](./preface.md)
+- [ลักษณะของงานปฏิบัติ](./task-schedule.md)
+- [ทฤษฎีที่เกี่ยวข้อง](./related_topics.md)
+- [บทสรุป](./conclusion.md)
+- [ข้อเสนอแนะ](./comment.md)
+- [เอกสารอ้างอิง](./references.md)
+- [ภาคผนวก](./appendix.md)

@@ -105,3 +105,5 @@
 | 7 ธ.ค. 2559 | BigQuery Performance (Social)         | Fix data issues (Social)             |
 | 8 ธ.ค. 2559 | Design Engpoint & Model (Teaching)    | Fix UI issues (Social)               |
 | 9 ธ.ค. 2559 | Learning Firebase (Teaching)          | Fix remaining issues (Social)        |
+
+[รายละเอียดของงานที่ปฏิบัติ](./task.md)
